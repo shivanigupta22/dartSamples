@@ -1,0 +1,8 @@
+Lexical Scope
+Dart is a lexically scoped language, which means that the scope of variables is determined statically, simply by the layout of the code. You can “follow the curly braces outwards” to see if a variable is in scope.
+
+
+Lexical Clousure
+A closure is a function object that has access to variables in its lexical scope, even when the function is used outside of its original scope.
+
+
