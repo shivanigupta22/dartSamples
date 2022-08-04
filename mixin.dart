@@ -1,3 +1,5 @@
+class Coder {}
+
 mixin Breathing {
   void swim() => print("Breathing");
 }
@@ -7,7 +9,7 @@ mixin Walking {
   void walk() => print("Walking");
 }
 
-mixin Coding {
+mixin Coding on Coder {
   void code() => print("print('Hello world!')");
 }
 
@@ -15,12 +17,18 @@ mixin Coding {
 class Human with Walking {}
 
 /// This class now has the `walk()` and `code()` methods
-class Developer with Walking, Coding {}
+class Developer extends Coder with Walking, Coding {}
+
+//here Coding mixin cannot be accessed because it doesn't extends Coder class
+//class Tester with Walking, Coding {}
+
 
 void main() {
   
   Human h = Human();
   Developer d = Developer();
+
   print(h..walk());
   print(d..walk()..code());
+
 }
